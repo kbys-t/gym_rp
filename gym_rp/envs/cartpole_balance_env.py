@@ -71,7 +71,7 @@ class CartPoleBalanceEnv(gym.Env):
         collision[1] = np.absolute( np.sin(ns[1]) * self.LEN_POLE + ns[0] ) > self.MAX_X + self.WIDTH_CART
         if collision[1]:
             nth = np.arcsin( (np.copysign(self.MAX_X + self.WIDTH_CART, ns[0]) - ns[0]) / self.LEN_POLE )
-            ns[1] = nth if np.cos(ns[1]) > 0.0 else np.sign(nth) * (np.pi - nth)
+            ns[1] = nth if np.cos(ns[1]) > 0.0 else np.sign(nth) * (np.pi - np.absolute(nth))
             ns[3] *= - 1.0
 
         self.state = ns
