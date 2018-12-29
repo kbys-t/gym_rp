@@ -31,7 +31,7 @@ class CartPoleSwingEnv(gym.Env):
         self.MASSLEN_POLE = (self.MASS_POLE * self.COM_POLE)
         # Limitation
         self.MAX_X = 2.5
-        self.MAX_VEL_X = 5.0
+        self.MAX_VEL_X = 5.0 * np.sqrt(2.0)
         self.MAX_VEL_ANG = 2.5 * np.pi
         self.MAX_FORCE = 10.0
 
